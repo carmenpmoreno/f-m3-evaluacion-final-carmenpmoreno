@@ -1,5 +1,6 @@
 import React from 'react';
 import List from './List';
+import './Home.scss';
 
 class Home extends React.Component {
   render() {
@@ -9,7 +10,7 @@ class Home extends React.Component {
         <header>
           <h1>Harry Potter Characters</h1>
         </header>
-        <main>
+        <main className="main">
             <List 
                 data = {this.props.data}
             />
