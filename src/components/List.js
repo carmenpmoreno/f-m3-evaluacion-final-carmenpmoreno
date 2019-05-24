@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from './Card';
 
 class List extends React.Component {
   render() {
@@ -6,8 +7,14 @@ class List extends React.Component {
     const {data} = this.props;
     return (
       <ul>
-        {data.map(item=> {
-          return <li>{item.name}</li>
+        {data.map((item)=> {
+          return <li key={item.index}>
+            <Card
+              name= {item.name}
+              image= {item.image}
+              house = {item.house}
+            />
+          </li>
         })}
       </ul>
     );
