@@ -17,6 +17,12 @@ class App extends React.Component {
   handleInputChange(event) {
     const {value} = event.target;
     console.log(value);
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        queryName: value
+      };
+    });
   }
 
   componentDidMount() {
