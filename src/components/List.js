@@ -5,10 +5,14 @@ import './List.scss';
 class List extends React.Component {
   render() {
     console.log('las props.data de list', this.props.data);
+
     const { data } = this.props;
+
     return (
       <ul className="list">
         {data.map(item => {
+          console.log('index de data', data.index);
+
           return (
             <li className="itemList" key={item.index}>
               <Card name={item.name} image={item.image} house={item.house} />

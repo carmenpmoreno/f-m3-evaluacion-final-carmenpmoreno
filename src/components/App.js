@@ -20,7 +20,6 @@ class App extends React.Component {
     fetch('http://hp-api.herokuapp.com/api/characters')
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         return this.setState({
           data: data,
           fetchOk: true
@@ -29,7 +28,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("data en App", this.state.data);
+    // console.log("data en App", this.state.data);
     return (
       <div className="App">
         <Switch>
@@ -38,6 +37,7 @@ class App extends React.Component {
             render={() => (
               <Home
                 data= {this.state.data}
+                fetchOk = {this.state.fetchOk}
               />
             )}
           />

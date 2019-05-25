@@ -3,7 +3,7 @@ import './Card.scss';
 
 class Card extends React.Component {
   render() {
-    console.log('las props de card', this.props);
+    // console.log('las props de card', this.props);
     const { name, image, house } = this.props;
     return (
       <div className="characterCard">
