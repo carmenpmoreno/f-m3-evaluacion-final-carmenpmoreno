@@ -8,13 +8,21 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
-      fetchOk: false
+      fetchOk: false,
+      queryName: '',
     };
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    const {value} = event.target;
+    console.log(value);
   }
 
   componentDidMount() {
     this.getCharacters();
   }
+
   // TODO: PONER LOADING EN ESTA FUNCIÓN, CUANDO FETCHOK: FALSE
   getCharacters() {
     fetch('http://hp-api.herokuapp.com/api/characters')
@@ -28,7 +36,7 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log("data en App", this.state.data);
+    const {data, fetchOk, queryName} = this.state;
     return (
       <div className="App">
         <Switch>
@@ -36,8 +44,10 @@ class App extends React.Component {
             path="/"
             render={() => (
               <Home
-                data= {this.state.data}
-                fetchOk = {this.state.fetchOk}
+                data= {data}
+                fetchOk = {fetchOk}
+                onInputChange = {this.handleInputChange}
+                queryName = {queryName}
               />
             )}
           />

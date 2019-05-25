@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import List from './List';
+import Filter from './Filter';
 import './Home.scss';
 
 class Home extends React.Component {
   render() {
-    console.log("las props.fetchOk de home", this.props.fetchOk)
-    const {data, fetchOk} = this.props
+    const {data, fetchOk, onInputChange, queryName} = this.props;
     return (
       <div className="home">
         <header>
@@ -14,8 +14,12 @@ class Home extends React.Component {
         </header>
           {fetchOk
             ? (<main className="main">
+                <Filter
+                onInputChange = {onInputChange}
+                />
                 <List 
                   data = {data}
+                  queryName = {queryName}
                 />
               </main>)
             : <p>Loading...</p>}
@@ -26,7 +30,8 @@ class Home extends React.Component {
 
 Home.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  fetchOk: PropTypes.bool.isRequired
+  fetchOk: PropTypes.bool.isRequired,
+  onInputChange: PropTypes.func,
 }
 
 

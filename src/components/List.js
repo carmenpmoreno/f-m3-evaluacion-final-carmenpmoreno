@@ -6,23 +6,26 @@ import './List.scss';
 
 class List extends React.Component {
   render() {
-    console.log('las props.data de list', this.props.data);
-
-    const { data } = this.props;
-
+    const { data, queryName } = this.props;
     return (
       <ul className="list">
-        {data.map((item,index) => {
-          console.log('index de cada item + 1', index + 1);
-          return (
-            <li className="itemList" key={index + 1} id={index + 1}>
-              <Card 
-                name={item.name} 
-                image={item.image} 
-                house={item.house} 
-              />
-            </li>
-          );
+        {data
+          .filter(item => { 
+            const UpperCaseName = item.name.toUpperCase();
+            const UpperCaseQueryName = queryName.toUpperCase();
+            return (
+              UpperCaseName.includes(UpperCaseQueryName)
+            );})
+          .map((item,index) => {
+            return (
+              <li className="itemList" key={index + 1}>
+                <Card 
+                  name={item.name} 
+                  image={item.image} 
+                  house={item.house} 
+                />
+              </li>
+            );
         })}
       </ul>
     );
