@@ -29,7 +29,6 @@ class App extends React.Component {
     this.getCharacters();
   }
 
-  // TODO: PONER LOADING EN ESTA FUNCIÓN, CUANDO FETCHOK: FALSE
   getCharacters() {
     fetch('http://hp-api.herokuapp.com/api/characters')
       .then(response => response.json())
