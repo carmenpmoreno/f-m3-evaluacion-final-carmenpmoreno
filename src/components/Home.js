@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import List from './List';
 import './Home.scss';
-import PropTypes from 'prop-types';
 
 class Home extends React.Component {
   render() {
