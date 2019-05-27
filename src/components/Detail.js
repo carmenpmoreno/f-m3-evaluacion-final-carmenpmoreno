@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Detail.scss';
 
 class Detail extends React.Component {
 
@@ -11,7 +12,7 @@ class Detail extends React.Component {
         const {image, name, house, yearOfBirth, patronus, alive} = item;
         return(
             <main>
-                <article>
+                <article className= "detailArticle">
                     <img className="detailImg" src={image} alt={name}/>
                     <h2 className="detailName">{name}</h2>
                     <p className="detailHouse">{house}</p>
