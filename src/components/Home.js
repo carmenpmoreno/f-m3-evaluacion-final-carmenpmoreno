@@ -15,6 +15,7 @@ class Home extends React.Component {
             <main className="main">
                 <Filter
                 onInputChange = {onInputChange}
+                queryName = {queryName}
                 />
                 <List 
                   data = {data}
