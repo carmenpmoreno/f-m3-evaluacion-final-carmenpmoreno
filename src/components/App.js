@@ -71,6 +71,8 @@ class App extends React.Component {
                 <Detail
                   match={routerProps.match}
                   data={data}
+                  state={this.state}
+                  fetchOk={fetchOk}
                 />
             }
           />
