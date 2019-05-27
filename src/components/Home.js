@@ -32,6 +32,7 @@ Home.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   fetchOk: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func,
+  queryName: PropTypes.string,
 }
 
 
