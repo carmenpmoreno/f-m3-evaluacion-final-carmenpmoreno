@@ -53,30 +53,34 @@ class App extends React.Component {
     const { data, fetchOk, queryName } = this.state;
     return (
       <div className="App">
-        <Switch>
-          <Route
-            exact path="/"
-            render={() => (
-              <Home
-                data={data}
-                fetchOk={fetchOk}
-                onInputChange={this.handleInputChange}
-                queryName={queryName}
-              />
-            )}
-          />
-          <Route
-            path="/character-detail/:characterId"
-            render={routerProps => 
-                <Detail
-                  match={routerProps.match}
+        {fetchOk
+          ? (<Switch>
+            <Route
+              exact path="/"
+              render={() => (
+                <Home
                   data={data}
-                  state={this.state}
                   fetchOk={fetchOk}
+                  onInputChange={this.handleInputChange}
+                  queryName={queryName}
                 />
-            }
-          />
-        </Switch>
+              )}
+            />
+            <Route
+              path="/character-detail/:characterId"
+              render={routerProps => 
+                  <Detail
+                    match={routerProps.match}
+                    data={data}
+                    state={this.state}
+                    fetchOk={fetchOk}
+                  />
+              }
+            />
+          </Switch>)
+          : <p className="homeLoading">Loading...</p>
+        }
+        
       </div>
     );
   }

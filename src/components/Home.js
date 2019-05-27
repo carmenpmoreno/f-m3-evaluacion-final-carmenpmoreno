@@ -12,8 +12,7 @@ class Home extends React.Component {
         <header>
           <h1>Harry Potter Characters</h1>
         </header>
-          {fetchOk
-            ? (<main className="main">
+            <main className="main">
                 <Filter
                 onInputChange = {onInputChange}
                 />
@@ -21,8 +20,7 @@ class Home extends React.Component {
                   data = {data}
                   queryName = {queryName}
                 />
-              </main>)
-            : <p>Loading...</p>}
+              </main>
       </div>
     );
   }
