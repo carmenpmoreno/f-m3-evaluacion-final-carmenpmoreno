@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Route, Switch } from 'react-router-dom';
 import Home from './Home';
+import Detail from './Detail';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,13 +10,13 @@ class App extends React.Component {
     this.state = {
       data: [],
       fetchOk: false,
-      queryName: '',
+      queryName: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(event) {
-    const {value} = event.target;
+    const { value } = event.target;
     console.log(value);
     this.setState(prevState => {
       return {
@@ -33,28 +34,45 @@ class App extends React.Component {
     fetch('http://hp-api.herokuapp.com/api/characters')
       .then(response => response.json())
       .then(data => {
-        return this.setState({
-          data: data,
+
+        const newData = data.map((item,index) => {
+          return {
+            ...item,
+            id: index + 1,
+          };
+        });
+
+        this.setState({
+          data: newData,
           fetchOk: true
         });
       });
   }
 
   render() {
-    const {data, fetchOk, queryName} = this.state;
+    const { data, fetchOk, queryName } = this.state;
     return (
       <div className="App">
         <Switch>
           <Route
-            path="/"
+            exact path="/"
             render={() => (
               <Home
-                data= {data}
-                fetchOk = {fetchOk}
-                onInputChange = {this.handleInputChange}
-                queryName = {queryName}
+                data={data}
+                fetchOk={fetchOk}
+                onInputChange={this.handleInputChange}
+                queryName={queryName}
               />
             )}
+          />
+          <Route
+            path="/character-detail/:characterId"
+            render={routerProps => 
+                <Detail
+                  match={routerProps.match.params}
+                  data={data}
+                />
+            }
           />
         </Switch>
       </div>
