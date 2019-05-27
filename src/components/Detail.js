@@ -3,15 +3,10 @@ import React from 'react';
 class Detail extends React.Component {
 
     render() {
-        console.log(this.props.match);
-
         const {data} = this.props;
-        const characterId = this.props.match.params.characterId;
+        const {characterId} = this.props.match.params;
         const item = data[characterId - 1];
-        const alive = item.alive;
-
-        console.log(item);
-        console.log(characterId);
+        const {alive} = item;
         return(
             <main>
                 <article>
