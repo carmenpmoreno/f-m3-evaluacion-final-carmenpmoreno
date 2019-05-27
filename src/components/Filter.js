@@ -4,7 +4,7 @@ import './Filter.scss';
 
 class Filter extends React.Component {
     render() {
-        const {onInputChange, queryName} = this.props;
+        const {onInputChange, queryName, onRadioClick} = this.props;
         return(
             <form>
                 <fieldset>
@@ -20,12 +20,13 @@ class Filter extends React.Component {
                 </fieldset>
                 <fieldset>
                     <legend>Choose a house</legend>
-                        <label>Griffindor</label>
+                        <label>Gryffindor</label>
                             <input
                                 id="Griffindor"
                                 type="radio"
-                                value="Griffindor"
+                                value="Gryffindor"
                                 name="houses"
+                                onClick = {onRadioClick}
                                 />
                         <label>Slytherin</label>
                             <input
@@ -33,6 +34,7 @@ class Filter extends React.Component {
                                 type="radio"
                                 value="Slytherin"
                                 name="houses"
+                                onClick = {onRadioClick}
                                 />
                         <label>Hufflepuff</label>
                             <input
@@ -40,6 +42,7 @@ class Filter extends React.Component {
                                 type="radio"
                                 value="Hufflepuff"
                                 name="houses"
+                                onClick = {onRadioClick}
                                 />
                         <label>Ravenclaw</label>
                             <input
@@ -47,6 +50,7 @@ class Filter extends React.Component {
                                 type="radio"
                                 value="Ravenclaw"
                                 name="houses"
+                                onClick = {onRadioClick}
                                 />
                 </fieldset>
                 

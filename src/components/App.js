@@ -10,9 +10,11 @@ class App extends React.Component {
     this.state = {
       data: [],
       fetchOk: false,
-      queryName: ''
+      queryName: '',
+      houseValue: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleRadioClick = this.handleRadioClick.bind(this);
   }
 
   handleInputChange(event) {
@@ -24,10 +26,22 @@ class App extends React.Component {
       };
     });
   }
+  handleRadioClick(event) {
+    const { value } = event.target;
+    console.log(value);
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        houseValue: value
+      };
+    });
+  }
 
   componentDidMount() {
     this.getCharacters();
   }
+
+
 
   getCharacters() {
     fetch('https://hp-api.herokuapp.com/api/characters')
@@ -49,7 +63,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { data, fetchOk, queryName } = this.state;
+    const { data, fetchOk, queryName, houseValue } = this.state;
     return (
       <div className="App">
         {fetchOk
@@ -61,6 +75,8 @@ class App extends React.Component {
                   data={data}
                   onInputChange={this.handleInputChange}
                   queryName={queryName}
+                  houseValue={houseValue}
+                  onRadioClick={this.handleRadioClick}
                 />
               )}
             />
