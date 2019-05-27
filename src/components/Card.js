@@ -9,7 +9,7 @@ class Card extends React.Component {
       <div className="characterCard">
         <img className="cardImg" src={image} alt={name}/>
         <h2 className="cardName">{name}</h2>
-        <h3 className="cardHouse">{house}</h3>
+        <p className="cardHouse">{house}</p>
       </div>
     );
   }

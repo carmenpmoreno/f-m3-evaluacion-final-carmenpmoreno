@@ -69,7 +69,7 @@ class App extends React.Component {
             path="/character-detail/:characterId"
             render={routerProps => 
                 <Detail
-                  match={routerProps.match.params}
+                  match={routerProps.match}
                   data={data}
                 />
             }

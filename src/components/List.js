@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Card from './Card';
 import './List.scss';
@@ -19,11 +20,13 @@ class List extends React.Component {
           .map((item,index) => {
             return (
               <li className="itemList" key={index + 1}>
+              <Link to={`/character-detail/${item.id}`}>
                 <Card 
-                  name={item.name} 
-                  image={item.image} 
-                  house={item.house} 
-                />
+                    name={item.name} 
+                    image={item.image} 
+                    house={item.house} 
+                  />
+              </Link>
               </li>
             );
         })}
