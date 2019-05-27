@@ -27,8 +27,8 @@ class Detail extends React.Component {
 }
 
 Detail.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.object),
-    match: PropTypes.object,
+    data: PropTypes.arrayOf(PropTypes.object).isRequired,
+    match: PropTypes.object.isRequired,
 }
 
 export default Detail;

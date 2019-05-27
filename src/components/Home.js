@@ -6,7 +6,7 @@ import './Home.scss';
 
 class Home extends React.Component {
   render() {
-    const {data, fetchOk, onInputChange, queryName} = this.props;
+    const {data, onInputChange, queryName} = this.props;
     return (
       <div className="home">
         <header>
@@ -28,9 +28,8 @@ class Home extends React.Component {
 
 Home.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  fetchOk: PropTypes.bool.isRequired,
-  onInputChange: PropTypes.func,
-  queryName: PropTypes.string,
+  onInputChange: PropTypes.func.isRequired,
+  queryName: PropTypes.string.isRequired,
 }
 
 

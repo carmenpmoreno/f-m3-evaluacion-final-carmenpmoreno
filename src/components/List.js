@@ -8,7 +8,6 @@ import './List.scss';
 class List extends React.Component {
   render() {
     const { data, queryName } = this.props;
-    console.log(this.props);
     return (
       <ul className="list">
         {data
@@ -38,7 +37,7 @@ class List extends React.Component {
 
 List.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  queryName: PropTypes.string,
+  queryName: PropTypes.string.isRequired,
 }
 
 export default List;

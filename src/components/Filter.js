@@ -19,7 +19,7 @@ class Filter extends React.Component {
     }
 }
 Filter.propTypes = {
-    onInputChange: PropTypes.func,
+    onInputChange: PropTypes.func.isRequired,
 }
 
 export default Filter;

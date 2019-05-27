@@ -17,7 +17,6 @@ class App extends React.Component {
 
   handleInputChange(event) {
     const { value } = event.target;
-    console.log(value);
     this.setState(prevState => {
       return {
         ...prevState,
@@ -60,7 +59,6 @@ class App extends React.Component {
               render={() => (
                 <Home
                   data={data}
-                  fetchOk={fetchOk}
                   onInputChange={this.handleInputChange}
                   queryName={queryName}
                 />
