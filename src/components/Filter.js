@@ -4,7 +4,7 @@ import './Filter.scss';
 
 class Filter extends React.Component {
     render() {
-        const {onInputChange, queryName} = this.props;
+        const {onInputChange, queryName, handleInputHouse, house} = this.props;
         return(
             <form>
                 <fieldset>
@@ -16,6 +16,16 @@ class Filter extends React.Component {
                         id="name"
                         onChange = {onInputChange}
                         value = {queryName}
+                    />
+                </fieldset>
+                <fieldset>
+                    <legend>Look for your favorite house</legend>
+                    <label htmlFor="house" className= "inputLabel">Filtro</label>
+                    <input 
+                        type="text"
+                        id="house"
+                        onChange = {handleInputHouse}
+                        value = {house}
                     />
                 </fieldset>
             </form>

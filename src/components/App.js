@@ -10,9 +10,11 @@ class App extends React.Component {
     this.state = {
       data: [],
       fetchOk: false,
-      queryName: ''
+      queryName: '',
+      house: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleInputHouse = this.handleInputHouse.bind(this);
   }
 
   handleInputChange(event) {
@@ -23,6 +25,17 @@ class App extends React.Component {
         queryName: value
       };
     });
+  }
+
+  handleInputHouse(event) {
+    const { value } = event.target;
+    console.log(value);
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        house: value
+      };
+    }); 
   }
 
   componentDidMount() {
@@ -49,7 +62,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { data, fetchOk, queryName } = this.state;
+    const { data, fetchOk, queryName, house } = this.state;
     return (
       <div className="App">
         {fetchOk
@@ -61,6 +74,9 @@ class App extends React.Component {
                   data={data}
                   onInputChange={this.handleInputChange}
                   queryName={queryName}
+                  handleInputHouse = {this.handleInputHouse}
+                  house = {house}
+
                 />
               )}
             />

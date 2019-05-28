@@ -7,7 +7,7 @@ import './List.scss';
 
 class List extends React.Component {
   render() {
-    const { data, queryName } = this.props;
+    const { data, queryName, house } = this.props;
     return (
       <ul className="list">
         {data
@@ -17,6 +17,11 @@ class List extends React.Component {
             return (
               UpperCaseName.includes(UpperCaseQueryName)
             );})
+          .filter(item => {
+            return (
+              item.house.includes(house)
+            )            
+          })
           .map((item,index) => {
             return (
               <li className="itemList" key={index + 1}>

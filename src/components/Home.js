@@ -6,7 +6,7 @@ import './Home.scss';
 
 class Home extends React.Component {
   render() {
-    const {data, onInputChange, queryName} = this.props;
+    const {data, onInputChange, queryName, handleInputHouse, house} = this.props;
     return (
       <div className="home">
         <header>
@@ -16,10 +16,13 @@ class Home extends React.Component {
                 <Filter
                 onInputChange = {onInputChange}
                 queryName = {queryName}
+                handleInputHouse = {handleInputHouse}
+                house = {house}
                 />
                 <List 
                   data = {data}
                   queryName = {queryName}
+                  house = {house}
                 />
               </main>
       </div>
