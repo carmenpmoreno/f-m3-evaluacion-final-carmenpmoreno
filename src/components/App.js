@@ -28,7 +28,6 @@ class App extends React.Component {
   }
   handleRadioClick(event) {
     const { value } = event.target;
-    console.log(value);
     this.setState(prevState => {
       return {
         ...prevState,

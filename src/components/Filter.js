@@ -22,36 +22,52 @@ class Filter extends React.Component {
                     <legend>Choose a house</legend>
                         <label>Gryffindor</label>
                             <input
-                                id="Griffindor"
+                                id="griffindor"
                                 type="radio"
-                                value="Gryffindor"
+                                value="gryffindor"
                                 name="houses"
                                 onClick = {onRadioClick}
                                 />
                         <label>Slytherin</label>
                             <input
-                                id="Slytherin"
+                                id="slytherin"
                                 type="radio"
-                                value="Slytherin"
+                                value="slytherin"
                                 name="houses"
                                 onClick = {onRadioClick}
                                 />
                         <label>Hufflepuff</label>
                             <input
-                                id="Hufflepuff"
+                                id="hufflepuff"
                                 type="radio"
-                                value="Hufflepuff"
+                                value="hufflepuff"
                                 name="houses"
                                 onClick = {onRadioClick}
                                 />
                         <label>Ravenclaw</label>
                             <input
-                                id="Ravenclaw"
+                                id="ravenclaw"
                                 type="radio"
-                                value="Ravenclaw"
+                                value="ravenclaw"
                                 name="houses"
                                 onClick = {onRadioClick}
                                 />
+                         <label>None</label>
+                            <input
+                                id="none"
+                                type="radio"
+                                value="none"
+                                name="houses"
+                                onClick = {onRadioClick}
+                                />
+                         {/* <label>All</label>
+                            <input
+                                id="all"
+                                type="radio"
+                                value="all"
+                                name="houses"
+                                onClick = {onRadioClick}
+                                /> */}
                 </fieldset>
                 
 

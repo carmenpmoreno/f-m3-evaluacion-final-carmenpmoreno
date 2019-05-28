@@ -8,7 +8,7 @@ import './List.scss';
 class List extends React.Component {
   render() {
     const { data, queryName, houseValue} = this.props;
-    console.log(houseValue);
+    console.log('En el estado, houseValue es: ', houseValue);
     return (
       <ul className="list">
         {data
@@ -19,8 +19,14 @@ class List extends React.Component {
               UpperCaseName.includes(UpperCaseQueryName)
             );})
           .filter(item => {
+            let houseSelected = item.house;
+            console.log('EL valor de item.house es: ', houseSelected);
+            const houseSelectedUpper = houseSelected.toUpperCase();
+            const houseValueUpper = houseValue.toUpperCase();
             return(
-              item.house.includes(houseValue)
+              houseValue !== 'none'
+              ?(houseSelectedUpper.includes(houseValueUpper))
+              :(houseSelected === '')
             );
           })
           .map((item,index) => {
