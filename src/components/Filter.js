@@ -8,7 +8,7 @@ class Filter extends React.Component {
         return(
             <form>
                 <fieldset>
-                    <legend>Look for your favorite character</legend>
+                    <legend>¡Let's look for your favorite character!</legend>
                     <label htmlFor="name" className= "inputLabel">Filtro</label>
                     <input 
                         className="Namefilter" 
@@ -19,7 +19,7 @@ class Filter extends React.Component {
                     />
                 </fieldset>
                 <fieldset>
-                    <legend>Choose a house</legend>
+                    <legend>Select your favourite house</legend>
                         <label>Gryffindor</label>
                             <input
                                 id="griffindor"
@@ -60,14 +60,6 @@ class Filter extends React.Component {
                                 name="houses"
                                 onClick = {onRadioClick}
                                 />
-                         {/* <label>All</label>
-                            <input
-                                id="all"
-                                type="radio"
-                                value="all"
-                                name="houses"
-                                onClick = {onRadioClick}
-                                /> */}
                 </fieldset>
                 
 
