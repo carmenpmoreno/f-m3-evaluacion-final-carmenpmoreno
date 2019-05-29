@@ -22,11 +22,22 @@ class List extends React.Component {
             let houseSelected = item.house;
             const houseSelectedUpper = houseSelected.toUpperCase();
             const houseValueUpper = houseValue.toUpperCase();
-            return(
-              houseValue !== 'none'
-              ?(houseSelectedUpper.includes(houseValueUpper))
-              :(houseSelected === '')
-            );
+            if(houseValue === 'none') {
+              return houseSelected === ''
+            } else if (houseValue === 'all') {
+              return true
+            } else {
+              return houseSelectedUpper.includes(houseValueUpper)
+            }
+            
+            // return(
+            //   houseValue !== 'none'
+            //   ?(houseSelectedUpper.includes(houseValueUpper))
+            //   :(houseSelected === ''),
+            //   houseValue === 'all'
+            //   ?(true)
+            //   :(houseSelectedUpper.includes(houseValueUpper))
+            // );
           })
           .map((item,index) => {
             return (

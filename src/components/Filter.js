@@ -4,7 +4,7 @@ import './Filter.scss';
 
 class Filter extends React.Component {
     render() {
-        const {onInputChange, queryName, onRadioClick} = this.props;
+        const {onInputChange, queryName, onRadioClick, houseValue} = this.props;
         return(
             <form>
                 <fieldset>
@@ -27,6 +27,7 @@ class Filter extends React.Component {
                                 value="gryffindor"
                                 name="houses"
                                 onClick = {onRadioClick}
+                                checked = {houseValue.includes('gryffindor')}
                                 />
                         <label>Slytherin</label>
                             <input
@@ -35,6 +36,7 @@ class Filter extends React.Component {
                                 value="slytherin"
                                 name="houses"
                                 onClick = {onRadioClick}
+                                checked = {houseValue.includes('slytherin')}
                                 />
                         <label>Hufflepuff</label>
                             <input
@@ -43,6 +45,7 @@ class Filter extends React.Component {
                                 value="hufflepuff"
                                 name="houses"
                                 onClick = {onRadioClick}
+                                checked = {houseValue.includes('hufflepuff')}
                                 />
                         <label>Ravenclaw</label>
                             <input
@@ -51,6 +54,7 @@ class Filter extends React.Component {
                                 value="ravenclaw"
                                 name="houses"
                                 onClick = {onRadioClick}
+                                checked = {houseValue.includes('ravenclaw')}
                                 />
                          <label>None</label>
                             <input
@@ -59,6 +63,16 @@ class Filter extends React.Component {
                                 value="none"
                                 name="houses"
                                 onClick = {onRadioClick}
+                                checked = {houseValue.includes('none')}
+                                />
+                         <label>All</label>
+                            <input
+                                id="all"
+                                type="radio"
+                                value="all"
+                                name="houses"
+                                onClick = {onRadioClick}
+                                checked = {houseValue.includes('all')}
                                 />
                 </fieldset>
             </form>
