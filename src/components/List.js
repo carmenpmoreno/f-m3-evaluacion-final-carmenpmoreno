@@ -20,7 +20,6 @@ class List extends React.Component {
             );})
           .filter(item => {
             let houseSelected = item.house;
-            console.log('EL valor de item.house es: ', houseSelected);
             const houseSelectedUpper = houseSelected.toUpperCase();
             const houseValueUpper = houseValue.toUpperCase();
             return(

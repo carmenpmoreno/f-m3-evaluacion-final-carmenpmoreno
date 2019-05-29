@@ -7,6 +7,7 @@ class Detail extends React.Component {
         const {data} = this.props;
         const {characterId} = this.props.match.params;
         const item = data[characterId - 1];
+        // buscar con .find ...
         const {image, name, house, yearOfBirth, patronus, alive} = item;
         return(
             <main>

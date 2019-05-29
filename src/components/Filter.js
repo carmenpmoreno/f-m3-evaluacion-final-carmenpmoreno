@@ -61,8 +61,6 @@ class Filter extends React.Component {
                                 onClick = {onRadioClick}
                                 />
                 </fieldset>
-                
-
             </form>
         );
     }

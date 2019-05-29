@@ -36,6 +36,17 @@ class App extends React.Component {
     });
   }
 
+  handleInputHouse(event) {
+    const { value } = event.target;
+    console.log(value);
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        house: value
+      };
+    }); 
+  }
+
   componentDidMount() {
     this.getCharacters();
   }
