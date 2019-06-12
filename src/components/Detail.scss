@@ -1,9 +1,22 @@
-.detailArticle {
+.detailSection {
+    height: 100vh;
     display: flex;
-    margin: auto;
+    justify-content: center;
+
+    background-image: url(../images/larm-rmah-151478-unsplash.jpg);
+    background-position: top;
+    background-size: contain;
+    background-attachment: fixed;
+}
+.detailArticle {
     align-self: center;
     flex-direction: column;
-    justify-content: center;
+    padding: 15px;
+    font-size: 14px;
+    color: white;
+    border: 1px white solid;
+    border-radius: 15px;
+
 }
 .detailImg {
     display: block;

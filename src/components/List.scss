@@ -6,3 +6,13 @@
 .itemList {
     list-style: none;
 }
+.characterCard {
+    padding: 5px;
+    font-size: 14px;
+    color: white;
+    border: 1px white solid;
+    border-radius: 15px;
+}
+.cardName :hover {
+    color:grey;
+}
