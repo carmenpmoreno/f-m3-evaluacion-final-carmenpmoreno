@@ -12,7 +12,13 @@
     color: white;
     border: 1px white solid;
     border-radius: 15px;
+    background-color: rgba(0,0,0,0.5);
+    &:hover {
+        background-color: rgba(247, 241, 241, 0.5);
+        color: black;
+    }
 }
+
 .cardName :hover {
     color:grey;
 }

@@ -44,7 +44,7 @@ class App extends React.Component {
         ...prevState,
         house: value
       };
-    }); 
+    });
   }
 
   componentDidMount() {
@@ -58,7 +58,7 @@ class App extends React.Component {
       .then(response => response.json())
       .then(data => {
 
-        const newData = data.map((item,index) => {
+        const newData = data.map((item, index) => {
           return {
             ...item,
             id: index + 1,
@@ -92,22 +92,21 @@ class App extends React.Component {
             />
             <Route
               path="/character-detail/:characterId"
-              render={routerProps => 
-                  <Detail
-                    match={routerProps.match}
-                    data={data}
-                    state={this.state}
-                    fetchOk={fetchOk}
-                  />
+              render={routerProps =>
+                <Detail
+                  match={routerProps.match}
+                  data={data}
+                  state={this.state}
+                  fetchOk={fetchOk}
+                />
               }
             />
           </Switch>)
           : <p className="homeLoading">Loading...</p>
         }
-        
       </div>
-    );
-  }
-}
-
-export default App;
+        );
+      }
+    }
+    
+    export default App;

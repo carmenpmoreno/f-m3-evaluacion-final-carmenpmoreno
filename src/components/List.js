@@ -29,15 +29,6 @@ class List extends React.Component {
             } else {
               return houseSelectedUpper.includes(houseValueUpper)
             }
-            
-            // return(
-            //   houseValue !== 'none'
-            //   ?(houseSelectedUpper.includes(houseValueUpper))
-            //   :(houseSelected === ''),
-            //   houseValue === 'all'
-            //   ?(true)
-            //   :(houseSelectedUpper.includes(houseValueUpper))
-            // );
           })
           .map((item,index) => {
             return (

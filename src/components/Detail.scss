@@ -2,24 +2,25 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-
-    background-image: url(../images/larm-rmah-151478-unsplash.jpg);
-    background-position: top;
-    background-size: contain;
-    background-attachment: fixed;
 }
 .detailArticle {
+    display: flex;
     align-self: center;
-    flex-direction: column;
+    flex-direction: row;
     padding: 15px;
     font-size: 14px;
     color: white;
     border: 1px white solid;
     border-radius: 15px;
-
+    background-color: rgba(247, 241, 241, 0.5);
+    color: black;
 }
 .detailImg {
     display: block;
     height: 280px;
     width: 230px;
+    opacity: 1;
+}
+.detailText {
+    padding: 15px;
 }
