@@ -3,8 +3,10 @@
 }
 .App {
     text-align: center;
+    height: 100vh;
     background-image: url(../images/larm-rmah-151478-unsplash.jpg);
     background-position: top;
     background-size: cover;
     background-attachment: fixed;
+    background-repeat: repeat;
 }

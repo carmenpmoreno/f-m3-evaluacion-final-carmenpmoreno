@@ -10,7 +10,7 @@ class Home extends React.Component {
     return (
       <div className="home">
         <header>
-          <h1>Harry Potter Characters</h1>
+          <h1 className="pageTitle">Harry Potter Characters</h1>
         </header>
             <main className="main">
                 <Filter

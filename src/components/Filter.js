@@ -7,18 +7,18 @@ class Filter extends React.Component {
         const {onInputChange, queryName, onRadioClick, houseValue} = this.props;
         return(
             <form>
-                <fieldset>
+                <fieldset className="filterContainer">
                     <legend>¡Let's look for your favorite character!</legend>
                     <label htmlFor="name" className= "inputLabel">Filtro</label>
                     <input 
-                        className="Namefilter" 
+                        className="nameFilter" 
                         type="text"
                         id="name"
                         onChange = {onInputChange}
                         value = {queryName}
                     />
                 </fieldset>
-                <fieldset>
+                <fieldset className="filterContainer">
                     <legend>Select your favourite house</legend>
                         <label>Gryffindor</label>
                             <input
